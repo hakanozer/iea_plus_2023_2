@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import axios from 'axios'
+import { userLogin } from '../api'
+import { toast } from 'react-toastify';
 
 function Login() {
 
@@ -8,18 +9,13 @@ function Login() {
 
   const sendLogin = (evt: React.FormEvent) => {
     evt.preventDefault()
-    const url = 'https://dummyjson.com/auth/login'
-    const sendObj = {
-      username: username,
-      password: password
-    }
-    axios.post(url, sendObj).then( res => {
+    userLogin(username, password).then( res => {
       const dt = res.data
       if (dt) {
-        console.log(dt.token)
+        toast.success('Login Success!')
       }
     }).catch(err => {
-      console.log(err.message)
+      toast.error('Username or Password Fail!')
     })
     
   }
