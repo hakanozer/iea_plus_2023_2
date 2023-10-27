@@ -1,5 +1,5 @@
 import CryptoJS from 'crypto-js'
-import { IUser } from "./models/IUser";
+import { IUser } from "../models/IUser";
 
 export const storeUser = ( user: IUser ) => {
     var st = JSON.stringify(user)

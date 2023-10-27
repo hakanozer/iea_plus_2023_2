@@ -3,14 +3,21 @@ import ReactDOM from 'react-dom/client';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Control from './utils/Control';
+import LoginControl from './utils/LoginControl';
 
+// import pages
 import Login from './pages/Login';
+import Home from './pages/Home';
+import Users from './pages/Users';
 
 const route =
 <BrowserRouter>
   <ToastContainer />
   <Routes>
-    <Route path='/' element={<Login />} />
+    <Route path='/' element={<LoginControl page={<Login />} />} />
+    <Route path='/home' element={ <Control page={<Home />} /> } />
+    <Route path='/users' element={ <Control page={<Users />} /> } />
   </Routes>
 </BrowserRouter>
 

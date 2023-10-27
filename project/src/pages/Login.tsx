@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import { userLogin } from '../api'
 import { toast } from 'react-toastify';
-import { getUser, storeUser } from '../util';
+import { getUser, storeUser } from '../utils/util';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+
+  const navigate = useNavigate()
 
   const [username, setUsername] = useState('kminchelle')
   const [password, setPassword] = useState('0lelplR')
@@ -13,8 +16,9 @@ function Login() {
     userLogin(username, password).then( res => {
       const dt = res.data
       if (dt) {
-        toast.success('Login Success!')
         storeUser(dt)
+        toast.success('Login Success!')
+        navigate('/home', {replace: true})
       }
     }).catch(err => {
       toast.error('Username or Password Fail!')
@@ -24,7 +28,7 @@ function Login() {
   useEffect(() => {
     const user = getUser()
     if (user) {
-      console.log(user.id, user.firstName)
+      navigate('/home', {replace: true})
     }
   }, [])
 
