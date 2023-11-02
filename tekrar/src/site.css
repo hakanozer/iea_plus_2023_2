@@ -1,0 +1,21 @@
+@keyframes barAnimate {
+    from {
+        opacity: 0;
+        height: 0px;
+    }
+    to {
+        opacity: 1;
+        height: 5px;
+    }
+}
+
+.bar {
+    height: 5px;
+    position: absolute;
+    background-color: #2196F3;
+    width: 100%;
+    left: 0;
+    right: 0;
+    animation-name: barAnimate;
+    animation-duration: 1s;
+}
