@@ -28,7 +28,12 @@ function Login() {
   useEffect(() => {
     const user = getUser()
     if (user) {
-      navigate('/home', {replace: true})
+      var url = 'home'
+      const stUtl = localStorage.getItem('url')
+      if (stUtl && stUtl !== '') {
+        url = stUtl
+      }
+      navigate(url, {replace: true})
     }
   }, [])
 

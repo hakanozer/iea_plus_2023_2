@@ -6,6 +6,7 @@ function Register() {
   const [surname, setSurname] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [errMessage, setErrMessage] = useState('')
 
   const registerFnc = (evt:React.FormEvent) => {
     evt.preventDefault()
@@ -17,6 +18,7 @@ function Register() {
         <center>
           <i className="bi bi-person-down" style={{fontSize: '3rem'}}></i>
           <h2>Register</h2>
+          <div className='text-danger mb-3'>{errMessage}</div>
         </center>
         <form onSubmit={registerFnc}>
             <div className='mb-3'>
