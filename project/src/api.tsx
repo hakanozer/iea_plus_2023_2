@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { IUser } from './models/IUser'
+import { IProducts } from './models/IProducts'
 
 const baseUrl = 'https://dummyjson.com/'
 
@@ -18,4 +19,8 @@ export const userLogin = ( username: string, password: string ) => {
         password: password
     }
     return config.post<IUser>('auth/login', sendObj)
+}
+
+export const products = () => {
+    return config.get<IProducts>('products')
 }

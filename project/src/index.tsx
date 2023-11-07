@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'react-toastify/dist/ReactToastify.css';
+import './site.css'
 import { ToastContainer, toast } from 'react-toastify';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Control from './utils/Control';

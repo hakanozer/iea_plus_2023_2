@@ -18,7 +18,14 @@ function Login() {
       if (dt) {
         storeUser(dt)
         toast.success('Login Success!')
-        navigate('/home', {replace: true})
+
+        var url = 'home'
+        const stUtl = localStorage.getItem('url')
+        if (stUtl && stUtl !== '') {
+          url = stUtl
+        }
+        navigate(url, {replace: true})
+        
       }
     }).catch(err => {
       toast.error('Username or Password Fail!')

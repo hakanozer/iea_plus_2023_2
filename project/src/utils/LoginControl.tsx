@@ -5,6 +5,11 @@ import { Navigate } from 'react-router-dom'
 function LoginControl( props: {page: React.JSX.Element} ) {
 
   const user = getUser()
+  var url = '/home'
+  const stUrl = localStorage.getItem('url')
+  if (stUrl) {
+    url = stUrl
+  }
 
   return (
     user === null
@@ -13,7 +18,7 @@ function LoginControl( props: {page: React.JSX.Element} ) {
         {props.page}
       </>
     :
-      <Navigate to={'/home'} replace={true} />
+      <Navigate to={url} replace={true} />
   )
 
 }
