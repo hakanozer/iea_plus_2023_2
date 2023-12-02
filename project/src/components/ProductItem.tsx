@@ -1,5 +1,6 @@
 import React from 'react'
 import { IProduct } from '../models/IProducts'
+import { NavLink } from 'react-router-dom'
 
 function ProductItem(props: {item: IProduct}) {
   return (
@@ -10,10 +11,9 @@ function ProductItem(props: {item: IProduct}) {
                 <h5 className="card-title">{props.item.title}</h5>
                 <p className="card-text" style={{height: 70}}>{props.item.description}</p>
                 <div className='d-flex justify-content-between'>
-                    <a href="#" className="btn btn-primary ">Detail</a>
+                    <NavLink to={'/productDetail/'+props.item.id} className="btn btn-primary">Detail</NavLink>
                     <div className='text-end'>{props.item.price}₺</div>
                 </div>
-                
             </div>
         </div>
     </div>

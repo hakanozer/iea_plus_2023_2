@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { IUser } from './models/IUser'
-import { IProducts } from './models/IProducts'
+import { IProduct, IProducts } from './models/IProducts'
 
 const baseUrl = 'https://dummyjson.com/'
 
@@ -23,4 +23,8 @@ export const userLogin = ( username: string, password: string ) => {
 
 export const products = () => {
     return config.get<IProducts>('products')
+}
+
+export const singleProduct = (id: String) => {
+    return config.get<IProduct>("products/"+id)
 }
