@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { IUser } from './models/IUser'
 import { IProduct, IProducts } from './models/IProducts'
+import { UsersModel } from './models/UsersModel'
 
 const baseUrl = 'https://dummyjson.com/'
 
@@ -27,4 +28,12 @@ export const products = () => {
 
 export const singleProduct = (id: String) => {
     return config.get<IProduct>("products/"+id)
+}
+
+export const searchProduct = (q: String) => {
+    return config.get<IProducts>("products/search?q="+q)
+}
+
+export const allUsers = () => {
+    return config.get<UsersModel>("users")
 }

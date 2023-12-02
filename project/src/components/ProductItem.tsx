@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 function ProductItem(props: {item: IProduct}) {
   return (
-    <div className='col-sm-4 mb-3'>
+    <div className='col-12 col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 mb-3'>
         <div className="card">
             <img src={props.item.thumbnail} height={270} className="card-img-top" alt="..." />
             <div className="card-body">
