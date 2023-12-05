@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import { searchProduct } from '../api'
 import { IProduct } from '../models/IProducts'
 import ProductItem from '../components/ProductItem'
+import { Helmet } from 'react-helmet'
 
 function ProductSearch() {
 
@@ -29,6 +30,10 @@ function ProductSearch() {
 
   return (
     <>
+      <Helmet>
+          <title>Product Search</title>
+          <meta name="description" content={'Site Product Search'}/>
+      </Helmet>
       <h2>Search - {query} ({proArr.length})</h2>
       { searchStatus === true && proArr.length == 0 &&
         <div className="alert alert-light text-center" role="alert">

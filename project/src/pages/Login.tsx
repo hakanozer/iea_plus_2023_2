@@ -3,6 +3,7 @@ import { userLogin } from '../api'
 import { toast } from 'react-toastify';
 import { getUser, storeUser } from '../utils/util';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet'
 
 function Login() {
 
@@ -46,6 +47,10 @@ function Login() {
 
   return (
     <>
+      <Helmet>
+        <title>E-commerce - Login</title>
+        <meta name="description" content="E-commerce - User Login"/>
+      </Helmet>
       <div className="row">
         <div className='col-12 col-sm-12 col-md-3 col-lg-4 col-xl-4 col-xxl-4'></div>
         <div className='col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4'>

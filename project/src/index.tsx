@@ -14,6 +14,7 @@ import Home from './pages/Home';
 import Users from './pages/Users';
 import ProductDetail from './pages/ProductDetail';
 import ProductSearch from './pages/ProductSearch';
+import Profile from './pages/Profile';
 
 const route =
 <BrowserRouter>
@@ -24,6 +25,7 @@ const route =
     <Route path='/users' element={ <Control page={<Users />} /> } />
     <Route path='/productDetail/:id' element={ <Control page={<ProductDetail />} /> } />
     <Route path='/productSearch' element={ <Control page={<ProductSearch />} /> } />
+    <Route path='/profile' element={ <Control page={<Profile />} /> } />
   </Routes>
 </BrowserRouter>
 

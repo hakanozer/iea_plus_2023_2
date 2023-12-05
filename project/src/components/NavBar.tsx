@@ -30,8 +30,7 @@ function NavBar( props: {user: IUser} ) {
                     Profile
                 </a>
                 <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="#">Action</a></li>
-                    <li><a className="dropdown-item" href="#">Another action</a></li>
+                    <li><NavLink to={'/profile'} className={'dropdown-item'}>Profile</NavLink></li>
                     <li><hr className="dropdown-divider" /></li>
                     <li><a className="dropdown-item" role='button' onClick={exit}>Logout</a></li>
                 </ul>

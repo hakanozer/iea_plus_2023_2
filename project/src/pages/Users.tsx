@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { allUsers } from '../api'
 import { User } from '../models/UsersModel'
+import { Helmet } from 'react-helmet'
 
 function Users() {
 
@@ -25,6 +26,10 @@ function Users() {
 
   return (
     <>
+      <Helmet>
+        <title>E-commerce - Users</title>
+        <meta name="description" content="E-commerce - Users"/>
+      </Helmet>
       <h2>Users</h2>
       <div className="table-responsive">
       <table className="table table-hover">

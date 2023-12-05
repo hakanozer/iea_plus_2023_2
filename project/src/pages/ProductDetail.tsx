@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { singleProduct } from '../api'
 import { IProduct } from '../models/IProducts'
 import ImageGallery from "react-image-gallery";
+import { Helmet } from 'react-helmet';
 
 function ProductDetail() {
 
@@ -39,6 +40,10 @@ function ProductDetail() {
     <>
     { item &&
         <>
+            <Helmet>
+                <title>{item.title}</title>
+                <meta name="description" content={item.description}/>
+            </Helmet>
             <div className='row mt-3'>
                 <div className='col-sm-6'>
                     <h2>{item.title}</h2>

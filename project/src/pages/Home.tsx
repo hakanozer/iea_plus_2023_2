@@ -3,6 +3,7 @@ import { products } from '../api'
 import { toast } from 'react-toastify'
 import { IProduct } from '../models/IProducts'
 import ProductItem from '../components/ProductItem'
+import { Helmet } from 'react-helmet'
 
 function Home() {
 
@@ -27,6 +28,10 @@ function Home() {
 
   return (
     <>
+      <Helmet>
+        <title>E-commerce - Products</title>
+        <meta name="description" content="E-commerce - Products"/>
+      </Helmet>
       <h2>Products</h2>
       <div className='row'>
         { proArr.map((item, index) => 
