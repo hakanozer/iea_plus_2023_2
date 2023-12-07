@@ -15,6 +15,7 @@ import Users from './pages/Users';
 import ProductDetail from './pages/ProductDetail';
 import ProductSearch from './pages/ProductSearch';
 import Profile from './pages/Profile';
+import Likes from './pages/Likes';
 
 const route =
 <BrowserRouter>
@@ -26,6 +27,7 @@ const route =
     <Route path='/productDetail/:id' element={ <Control page={<ProductDetail />} /> } />
     <Route path='/productSearch' element={ <Control page={<ProductSearch />} /> } />
     <Route path='/profile' element={ <Control page={<Profile />} /> } />
+    <Route path='/likes' element={ <Control page={<Likes />} /> } />
   </Routes>
 </BrowserRouter>
 
