@@ -3,13 +3,18 @@ import { likesArr } from '../utils/util'
 import { singleProduct } from '../api'
 import { IProduct } from '../models/IProducts'
 import ProductItem from '../components/ProductItem'
+import { useSelector } from 'react-redux'
+import { StateType } from '../useRedux/store'
 
 function Likes() {
 
+  // for redux
+  const arr = useSelector( (item:StateType) => item.LikesReducer )
+  
   const [proArr, setProArr] = useState<IProduct[]>([])
   const arrPro:IProduct[] = []
   useEffect( () => {
-    const arr = likesArr()
+    
     arr.forEach((id, index) => {
       singleProduct(""+id).then(res => {
         const dt = res.data

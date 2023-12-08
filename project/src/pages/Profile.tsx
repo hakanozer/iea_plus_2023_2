@@ -1,8 +1,13 @@
 import React, { FormEvent, useEffect, useRef, useState } from 'react'
 import { getUser } from '../utils/util'
 import { IUser } from '../models/IUser'
+import { useSelector } from 'react-redux'
+import { StateType } from '../useRedux/store'
 
 function Profile() {
+
+  // for redux
+  const likesArr = useSelector( (item:StateType) => item.LikesReducer )
 
   // UseRef
   const firstNameRef = useRef<HTMLInputElement>(null)
@@ -42,6 +47,7 @@ function Profile() {
                     <div className='col-sm-6'>
                         <center className='mt-3 mb-3'>
                             <img src={item.image} style={{width: 120, borderRadius: 60, backgroundColor: '#e7e7e7'}}></img>
+                            <h4>{'Likes Count: ' + likesArr.length}</h4>
                         </center>
                         <form onSubmit={sendForm}>
                             <div className='mb-3'>

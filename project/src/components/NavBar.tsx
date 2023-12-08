@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { IUser } from '../models/IUser'
 import { NavLink, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { StateType } from '../useRedux/store'
+import { LikesAction } from '../useRedux/actions/LikesAction'
+import { LikesType } from '../useRedux/types/LikesType'
 
 function NavBar( props: {user: IUser} ) {
+
+  // for redux
+  const likesArr = useSelector( (item:StateType) => item.LikesReducer )
+  const dispatch = useDispatch()
+  useEffect(() => {
+    const sendItem: LikesAction = {
+        type: LikesType.LIKE_ADD,
+        payload: []
+    }
+    dispatch(sendItem)
+  }, [])
 
   const navigate = useNavigate()  
   const exit = () => {
@@ -26,7 +41,7 @@ function NavBar( props: {user: IUser} ) {
                     <NavLink className="nav-link" to={'/users'}><i className="bi bi-people"></i> Users</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" to={'/likes'}><i className="bi bi-suit-heart"></i> Likes</NavLink>
+                    <NavLink className="nav-link" to={'/likes'}><i className="bi bi-suit-heart"></i> Likes ({likesArr.length})</NavLink>
                 </li>
                 <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

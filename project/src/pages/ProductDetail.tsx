@@ -5,8 +5,16 @@ import { IProduct } from '../models/IProducts'
 import ImageGallery from "react-image-gallery";
 import { Helmet } from 'react-helmet';
 import { addRemoveLike, likeControl } from '../utils/util';
+import { useDispatch, useSelector } from 'react-redux';
+import { StateType } from '../useRedux/store';
+import { LikesAction } from '../useRedux/actions/LikesAction';
+import { LikesType } from '../useRedux/types/LikesType';
 
 function ProductDetail() {
+
+  // for redux
+  const likesArr = useSelector( (item:StateType) => item.LikesReducer )
+  const dispatch = useDispatch()
 
   const navigate = useNavigate() 
   const [item, setItem] = useState<IProduct>()  
@@ -45,6 +53,12 @@ function ProductDetail() {
     const status = !isLike
     setIsLike(status)
     addRemoveLike(item!.id)
+    
+    const sendItem: LikesAction = {
+        type: LikesType.LIKE_ADD,
+        payload: []
+    }
+    dispatch(sendItem)
   }
 
   return (
