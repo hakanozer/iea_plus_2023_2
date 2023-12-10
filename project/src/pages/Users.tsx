@@ -45,7 +45,7 @@ function Users() {
       </thead>
       <tbody>
       { arr.map((item, index) => 
-        <tr key={index} onClick={() => selectRow(index)} role='button' data-bs-toggle="modal" data-bs-target="#exampleModal" >
+        <tr className='scale-up-ver-top' key={index} onClick={() => selectRow(index)} role='button' data-bs-toggle="modal" data-bs-target="#exampleModal" >
           <th scope="row">{item.id}</th>
           <td>
             <img src={item.image} className='rounded d-block' style={{maxWidth: 75, }}/>

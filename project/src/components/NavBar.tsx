@@ -38,6 +38,9 @@ function NavBar( props: {user: IUser} ) {
                     <NavLink className="nav-link" to={'/home'}><i className="bi bi-house"></i> Home</NavLink>    
                 </li>
                 <li className="nav-item">
+                    <NavLink className="nav-link" to={'/categories'}><i className="bi bi-tag"></i> Categories</NavLink>    
+                </li>
+                <li className="nav-item">
                     <NavLink className="nav-link" to={'/users'}><i className="bi bi-people"></i> Users</NavLink>
                 </li>
                 <li className="nav-item">

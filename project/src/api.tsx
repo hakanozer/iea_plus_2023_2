@@ -37,3 +37,11 @@ export const searchProduct = (q: String) => {
 export const allUsers = () => {
     return config.get<UsersModel>("users")
 }
+
+export const categories = () => {
+    return config.get<string[]>("products/categories")
+}
+
+export const categoryProduct = (name: string) => {
+    return config.get<IProducts>("products/category/"+name)
+}

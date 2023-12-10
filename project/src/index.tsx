@@ -20,6 +20,8 @@ import ProductDetail from './pages/ProductDetail';
 import ProductSearch from './pages/ProductSearch';
 import Profile from './pages/Profile';
 import Likes from './pages/Likes';
+import Categories from './pages/Categories';
+import Category from './pages/Category';
 
 
 const route =
@@ -34,6 +36,8 @@ const route =
       <Route path='/productSearch' element={ <Control page={<ProductSearch />} /> } />
       <Route path='/profile' element={ <Control page={<Profile />} /> } />
       <Route path='/likes' element={ <Control page={<Likes />} /> } />
+      <Route path='/categories' element={ <Control page={<Categories />} /> } />
+      <Route path='/category/:name' element={ <Control page={<Category />} /> } />
     </Routes>
   </BrowserRouter>
 </Provider>
